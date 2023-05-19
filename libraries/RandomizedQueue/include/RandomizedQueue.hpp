@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RANDOMIZEDQUEUE_HPP
+#define RANDOMIZEDQUEUE_HPP
 
 #include <algorithm>
 #include <random>
@@ -63,7 +64,7 @@ class RandomizedQueue {
         }
 
         friend bool operator==(const QueueIterator &left, const QueueIterator &right) {
-            return left.curr_ind_ == right.curr_ind_;
+            return left.elements_ == right.elements_ && left.curr_ind_ == right.curr_ind_ && left.indexes_ == right.indexes_;
         }
 
         friend bool operator!=(const QueueIterator &left, const QueueIterator &right) { return !(left == right); }
@@ -112,3 +113,5 @@ public:
 
     [[nodiscard]] ConstIterator cend() const { return end(); }
 };
+
+#endif // RANDOMIZEDQUEUE_HPP
