@@ -64,7 +64,7 @@ class RandomizedQueue {
         }
 
         friend bool operator==(const QueueIterator &left, const QueueIterator &right) {
-            return left.elements_ == right.elements_ && left.curr_ind_ == right.curr_ind_ && left.indexes_ == right.indexes_;
+            return left.elements_ == right.elements_ && left.curr_ind_ == right.curr_ind_;
         }
 
         friend bool operator!=(const QueueIterator &left, const QueueIterator &right) { return !(left == right); }
@@ -114,4 +114,4 @@ public:
     [[nodiscard]] ConstIterator cend() const { return end(); }
 };
 
-#endif // RANDOMIZEDQUEUE_HPP
+#endif  // RANDOMIZEDQUEUE_HPP
