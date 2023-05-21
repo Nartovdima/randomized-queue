@@ -12,6 +12,11 @@ jobs:
       CXX: clang++
 
     steps:
+    - name: Checkout submodules
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+        
     - name: Check for bad words
       run: "! grep -R -n -w -f .bad_words src libraries"
     - name: Run clang format
